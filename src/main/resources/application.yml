@@ -1,11 +1,13 @@
 server:
   port: 8888
-spring:
-  profiles:
-    active: dev
+
+# 需要激活的环境
+#spring:
+#  profiles:
+#    active: dev
 ---
 server:
-  port: 8081
+  port: 8080
 
 spring:
   profiles: dev

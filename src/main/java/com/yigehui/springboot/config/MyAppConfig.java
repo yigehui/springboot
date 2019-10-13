@@ -1,9 +1,11 @@
 package com.yigehui.springboot.config;
 
+import com.yigehui.springboot.component.MyLocaleResolver;
 import com.yigehui.springboot.sevrvice.HelloService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.LocaleResolver;
 
 /**
  * @Configuration 指明当前类是配置类：就是替代之前的配置文件
@@ -20,5 +22,10 @@ public class MyAppConfig {
         return  new HelloService();
     }
 
+    //注册国际化解析器
+    @Bean
+    public LocaleResolver localeResolver(){
+        return new MyLocaleResolver();
+    }
 
 }
