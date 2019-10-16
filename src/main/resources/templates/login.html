@@ -27,12 +27,13 @@
 
     <div class="container">
 
-      <form class="form-signin">
+      <form class="form-signin" th:action="@{/user/login}" th:method="post">
         <h2 class="form-signin-heading" th:text="#{login.tip}">Please sign in</h2>
+        <p style="color: red;" th:text="${message}" th:if="${not #strings.isEmpty(message)}"></p>
         <label for="inputEmail" th:text="#{login.username}" class="sr-only">Email address</label>
-        <input type="email"  id="inputEmail" class="form-control" th:placeholder="#{login.username}" placeholder="Email address" required="" autofocus="">
+        <input   name="username" id="inputEmail" class="form-control" th:placeholder="#{login.username}" placeholder="Email address" required="" autofocus="">
         <label for="inputPassword" th:text="#{login.password}" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" th:placeholder="#{login.password}" class="form-control" placeholder="Password" required="">
+        <input type="password" id="inputPassword" name="password" th:placeholder="#{login.password}" class="form-control" placeholder="Password" required="">
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> [[#{login.remember}]]
