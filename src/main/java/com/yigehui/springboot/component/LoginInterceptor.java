@@ -13,7 +13,9 @@ public class LoginInterceptor implements HandlerInterceptor {
         if(user == null){
 
             request.setAttribute("message","没有权限，请登录！");
-            request.getRequestDispatcher("/index.html").forward(request,response);
+
+            response.sendRedirect( request.getServletContext().getContextPath() + "/index.html");
+//            request.getRequestDispatcher("/index.html").forward(request,response);
             return false;
         }else{
             return true;
