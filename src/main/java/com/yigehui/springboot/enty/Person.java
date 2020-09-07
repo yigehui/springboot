@@ -1,6 +1,8 @@
 package com.yigehui.springboot.enty;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
 
 
     private Integer personId;
